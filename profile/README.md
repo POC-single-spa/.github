@@ -53,4 +53,4 @@ pnpm start
 4. Access the application in your browser at `http://localhost:9000/`.
 
 ## Contributor
-- (hbler)[https://github.com/Hbler]
+- [hbler](https://github.com/Hbler)
