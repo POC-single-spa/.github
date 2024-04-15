@@ -53,7 +53,7 @@ pnpm start
 ```
 4. Access the application in your browser at `http://localhost:9000/`.
 
-## Running the Project with Docker Compose {#running-the-project-with-docker-compose}
+## Running the Project with Docker Compose
 
 If you have cloned all the repositories into the same directory, you can run the entire project using Docker Compose. Follow these steps:
 
