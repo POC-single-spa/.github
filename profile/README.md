@@ -36,6 +36,7 @@ Although they are from different repositories, they work together to display pro
 ## Running the Application
 
 To run the application, follow these steps:
+(also available with [docker](#running-the-project-with-docker-compose))
 
 1. Clone the repository.
 2. Navigate to each repository and install dependencies using your preferred package manager:
@@ -51,6 +52,60 @@ cd root-config
 pnpm start
 ```
 4. Access the application in your browser at `http://localhost:9000/`.
+
+## Running the Project with Docker Compose {#running-the-project-with-docker-compose}
+
+If you have cloned all the repositories into the same directory, you can run the entire project using Docker Compose. Follow these steps:
+
+1. **Create a Docker Compose Configuration File**:
+   Create a `docker-compose.yml` file in the root directory (where all repositories are located) with the following configuration:
+
+   ```yaml
+   version: '3.8'
+
+   services:
+     api:
+       build: ./api
+       ports:
+         - "9001:9001"
+     style:
+       build: ./style
+       ports:
+         - "9002:9002"
+     header:
+       build: ./header
+       ports:
+         - "8080:8080"
+     product-listing:
+       build: ./product-listing
+       ports:
+         - "8082:8082"
+     product-page:
+       build: ./product-page
+       ports:
+         - "8083:8083"
+     cart:
+       build: ./cart
+       ports:
+         - "8081:8081"
+     root-config:
+       build: ./root-config
+       ports:
+         - "9000:9000"
+    ```
+
+2. **Run Docker Compose:**
+    Open a terminal and navigate to the directory containing the docker-compose.yml file.
+    Run the following command to start all services defined in the docker-compose.yml file:
+
+    ```bash
+    docker-compose up --build
+    ```
+
+3. **Access the Application**
+    Once Docker Compose has started all services, you can access the application in your browser at `http://localhost:9000/`.
+
+By using Docker Compose, you can easily manage and run the entire project with a single command, simplifying the development and deployment process.
 
 ## Contributor
 - [hbler](https://github.com/Hbler)
